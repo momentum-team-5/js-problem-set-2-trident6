@@ -3,8 +3,19 @@
 // For example, `remove(['Cadence', 'Ordel', 'Marion'], 'Marion')` results
 // in `['Cadence', 'Ordel']`.
 //
+
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
+
+function remove(ar, p) {
+    let newarray = []
+    for (let name of ar) {
+        if (name !== p) {
+            newarray.push(name)
+        }
+    }
+    return newarray
+}
 
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
@@ -12,8 +23,36 @@
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(array) {
+    let sum = 0
+    for (let num of array) {
+        sum += num
+    }
+    return sum
+}
+
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+
+// function average(ar) {
+//     let avg = 0
+//     if (ar.length === 0) {
+//         return undefined
+//     } else {
+//         avg = sum(ar)
+//     }
+//     return avg /= ar.length
+// }
+
+function average(array) {
+    let avg = 0
+    if (array.length === 0) {
+        return undefined
+    } else {
+        avg = sum(array)
+    }
+    return avg /= array.length
+}
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
